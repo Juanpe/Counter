@@ -1,5 +1,6 @@
 ![](http://cdn.juanpecatalan.com/images/github/Counter/counter_header_v1.jpg)
 
+<p align="center">
 [![Version](https://img.shields.io/cocoapods/v/Counter.svg?style=flat)](http://cocoapods.org/pods/JDAnimationKit)
 [![Platform](https://img.shields.io/cocoapods/p/Counter.svg?style=flat)](http://cocoapods.org/pods/JDAnimationKit)
 <a href="https://twitter.com/juanpeCMiOS">
@@ -8,6 +9,7 @@
 <a href="https://opensource.org/licenses/MIT">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License" />
 </a>
+</p>
 
 **Counter** is powerful and multipurpose counter.
 
@@ -51,11 +53,7 @@ Run `carthage` to build the framework and drag the built `counter.framework` int
 
 #### Manually
 
-  If you prefer, you can integrate Counter into your project manually.
-
-#### Source File
-
-Simply add the `Counter.swift` source file directly into your project.
+  If you prefer, you can integrate Counter into your project manually. Simply add the `Counter.swift` source file directly into your project.
 
 ## How to use xcodeproj 🐒
 
