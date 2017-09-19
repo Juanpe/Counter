@@ -1,0 +1,6 @@
+framework module Counter {
+  umbrella header "Counter-umbrella.h"
+
+  export *
+  module * { export * }
+}

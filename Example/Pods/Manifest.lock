@@ -1,0 +1,16 @@
+PODS:
+  - Counter (0.1.0)
+
+DEPENDENCIES:
+  - Counter (from `../`)
+
+EXTERNAL SOURCES:
+  Counter:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Counter: 70c12183e97345ede34a942dd3dfd630d1ec5632
+
+PODFILE CHECKSUM: 58bf7c70206083261f2512323c8651f033ffe430
+
+COCOAPODS: 1.3.1

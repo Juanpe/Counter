@@ -1,0 +1,22 @@
+{
+  "name": "Counter",
+  "version": "0.1.0",
+  "summary": "A short description of Counter.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Juanpe Catalán/Counter",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Juanpe Catalán": "juanpecm@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Juanpe Catalán/Counter.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Counter/Classes/**/*"
+}
