@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Counter_Example' do
+  pod 'Counter', :path => '../'
+
+  target 'Counter_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
