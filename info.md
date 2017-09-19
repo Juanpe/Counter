@@ -1,8 +1,12 @@
 ![](http://cdn.juanpecatalan.com/images/github/Counter/counter_header_v1.jpg)
 
 <p align="center">
-[![Version](https://img.shields.io/cocoapods/v/Counter.svg?style=flat)](http://cocoapods.org/pods/JDAnimationKit)
-[![Platform](https://img.shields.io/cocoapods/p/Counter.svg?style=flat)](http://cocoapods.org/pods/JDAnimationKit)
+<a href="http://cocoapods.org/pods/Counter">
+  <img src="https://img.shields.io/cocoapods/v/Counter.svg?style=flat" alt="Version" />
+</a>
+<a href="http://cocoapods.org/pods/Counter">
+  <img src="https://img.shields.io/cocoapods/p/Counter.svg?style=flat" alt="Platform" />
+</a>
 <a href="https://twitter.com/juanpeCMiOS">
         <img src="https://img.shields.io/badge/contact-@juanpeCMiOS-blue.svg?style=flat" alt="Twitter: @juanpeCMiOS" />
     </a>
