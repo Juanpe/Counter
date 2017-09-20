@@ -21,6 +21,7 @@
 
 - [x] Easy to use
 - [x] Increment/Decrement
+- [x] You decide the start value
 - [x] Sum various values
 - [x] Use your own objects
 - [x] Milestones (alarms)
@@ -117,9 +118,9 @@ print(ageCounter.currentValue) // 110
 
 // Also you can use `sum` method or static method
 
-ageCounter.sum(dad, mum, son) // 110
+ageCounter.sum(countables:dad, mum, son) // 110
 
-let ages = Counter.sum(dad, mum, son) // 110
+let ages = Counter.sum(countables:dad, mum, son) // 110
 
 ```
 
