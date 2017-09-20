@@ -15,20 +15,21 @@
 </a>
 </p>
 
-**Counter** is powerful and multipurpose counter.
+**Counter**  is powerful and multipurpose counter.
 
-## Features
+## Features 🚀
 
 - [x] Easy to use
-- [x] Use your own objects
 - [x] Increment/Decrement
+- [x] Sum various values
+- [x] Use your own objects
 
-### Supported OS & SDK Versions
+### Supported OS & SDK Versions 📋
 
 * iOS 9.0+
 * Swift 3
 
-## Installation
+## Installation 📲
 
 #### Using [CocoaPods](https://cocoapods.org)
 
@@ -55,7 +56,7 @@ github "Juanpe/counter"
 
 Run `carthage` to build the framework and drag the built `counter.framework` into your Xcode project.
 
-#### Manually
+#### Manually 💪🏼
 
   If you prefer, you can integrate Counter into your project manually. Simply add the `Counter.swift` source file directly into your project.
 
@@ -65,18 +66,95 @@ Import Counter in proper place.
 ```swift
 import Counter
 ```
+Now, you only need to create a Counter instance and start to play 🙂
 
-## Contributed
+```swift
+let counter = Counter() // 0
+counter.increment()     // 1
+```
+
+You can specify how many units you want increment the counter
+
+```swift
+counter.increment(2)    // 3
+```
+
+Also you can decrement the count
+
+```swift
+counter.decrement()     // 2
+```
+
+And of course you can reset the counter
+
+```swift
+counter.reset()         // 0
+```
+
+Other powerful feature is that you can sum various values at the same time
+
+```swift
+counter.sum(countables: 2, 3, -1)  // 4
+```
+
+#### Advanced 🤓
+
+Can use your own objects to increment the counter. Only need implement `Countable` protocol:
+
+```swift
+protocol Countable {
+    var deltaValue: Int { get }
+}
+```
+
+For example:
+
+```swift
+struct Person {
+    var age: Int
+}
+
+extension Person: Countable{
+    var deltaValue: Int {
+        return self.age
+    }
+}
+
+let dad = Person(age: 45)
+let mum = Person(age: 40)
+let son = Person(age: 25)
+
+let ageCounter = Counter()
+ageCounter.increment(dad)
+ageCounter.increment(mum)
+ageCounter.increment(son)
+
+print(ageCounter.currentValue) // 110
+
+// Also you can use `sum` method or static method
+
+ageCounter.sum(dad, mum, son) // 110
+
+let ages = Counter.sum(dad, mum, son) // 110
+
+
+```
+
+#### Callbacks 🔁
+
+You can create `milestones`
+
+## Contributed ❤️
 This is an open source project, so feel free to contribute. How?
 - Open an [issue](https://github.com/Juanpe/Counter/issues/new).
 - Send feedback via [email](mailto://juanpecatalan.com).
 - Propose your own fixes, suggestions and open a pull request with the changes.
 
-## Author
+## Author 👨🏻‍💻
 
   * Juanpe Catalán [🐦](https://www.twitter.com/juanpecmios)
 
-## License
+## License 👮🏻
 
 ```
 MIT License
