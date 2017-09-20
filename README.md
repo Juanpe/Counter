@@ -150,6 +150,8 @@ This is an open source project, so feel free to contribute. How?
 - Send feedback via [email](mailto://juanpecatalan.com).
 - Propose your own fixes, suggestions and open a pull request with the changes.
 
+See [all contributors](https://github.com/Juanpe/Counter/graphs/contributors)
+
 ## Author 👨🏻‍💻
 [1.1]: http://i.imgur.com/tXSoThF.png
 [1]: http://www.twitter.com/juanpecmios
