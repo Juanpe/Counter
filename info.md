@@ -39,23 +39,6 @@ Edit your `Podfile` and specify the dependency:
 pod "Counter"
 ```
 
-#### Using [Carthage](https://github.com/Carthage/Carthage)
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate Counter into your Xcode project using Carthage, specify it in your `Cartfile`:
-
-```ogdl
-github "Juanpe/counter"
-```
-
-Run `carthage` to build the framework and drag the built `counter.framework` into your Xcode project.
-
 #### Manually 💪🏼
 
   If you prefer, you can integrate Counter into your project manually. Simply add the `Counter.swift` source file directly into your project.
@@ -151,8 +134,10 @@ This is an open source project, so feel free to contribute. How?
 - Propose your own fixes, suggestions and open a pull request with the changes.
 
 ## Author 👨🏻‍💻
-
-  * Juanpe Catalán [🐦](https://www.twitter.com/juanpecmios)
+  * Juanpe Catalán
+  <a href="https://www.twitter.com/juanpecmios">
+    <img src="http://cdn.juanpecatalan.com/images/github/Counter/twitter.png" alt="License" width="25"/>
+  </a>
 
 ## License 👮🏻
 
