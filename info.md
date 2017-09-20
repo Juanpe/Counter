@@ -134,9 +134,10 @@ This is an open source project, so feel free to contribute. How?
 - Propose your own fixes, suggestions and open a pull request with the changes.
 
 ## Author 👨🏻‍💻
-  <a href="https://www.twitter.com/juanpecmios">
-    * Juanpe Catalán <img src="http://cdn.juanpecatalan.com/images/github/Counter/twitter.png" alt="License" width="25"/>
-  </a>
+[1.1]: http://i.imgur.com/tXSoThF.png
+[1]: http://www.twitter.com/juanpecmios
+
+* Juanpe Catalán [![alt text][1.1]][1]
 
 ## License 👮🏻
 
