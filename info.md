@@ -91,7 +91,7 @@ protocol Countable {
 }
 ```
 
-For example:
+Example:
 
 ```swift
 struct Person {
@@ -123,7 +123,7 @@ let ages = Counter.sum(dad, mum, son) // 110
 
 ```
 
-#### Callbacks 🔁
+#### Milestones 🔔
 
 ![](http://cdn.juanpecatalan.com/images/github/Counter/milestone.png)
 
