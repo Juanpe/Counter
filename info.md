@@ -23,6 +23,7 @@
 - [x] Increment/Decrement
 - [x] Sum various values
 - [x] Use your own objects
+- [x] Add milestones
 
 ### Supported OS & SDK Versions 📋
 
@@ -120,12 +121,22 @@ ageCounter.sum(dad, mum, son) // 110
 
 let ages = Counter.sum(dad, mum, son) // 110
 
-
 ```
 
 #### Callbacks 🔁
 
-You can create `milestones`
+![](http://cdn.juanpecatalan.com/images/github/Counter/milestone.png)
+
+Sometimes you need to know when a counter has reached or will reach a value. With `Counter` will be a piece of cake.
+You only need to add `milestones` and conform to `CounterDelegate` protocol. Then, your counter will notify you before reaching and when it reaches each previously defined milestone.
+
+```swift
+protocol CounterDelegate{
+    func counter(_ counter: Counter, willReachValue value: Int)
+    func counter(_ counter: Counter, hasReachedValue value: Int)
+    func counter(_ counter: Counter, didChangeValue value: Int)
+}
+```
 
 ## Contributed ❤️
 This is an open source project, so feel free to contribute. How?
