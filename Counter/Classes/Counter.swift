@@ -8,12 +8,11 @@
 
 import Foundation
 
+/// A type that has a `deltaValue`.
 public protocol Countable {
+    /// This value will be used to increment
+    /// the counter
     var deltaValue: Int { get }
-}
-
-func + (lhs: Countable, rhs: Countable) -> Int{
-    return lhs.deltaValue + rhs.deltaValue
 }
 
 extension Int: Countable {
@@ -22,6 +21,7 @@ extension Int: Countable {
     }
 }
 
+/// A type that has a `deltaValue`.
 public protocol CounterDelegate{
     func counter(_ counter: Counter, willReachValue value: Int)
     func counter(_ counter: Counter, hasReachedValue value: Int)

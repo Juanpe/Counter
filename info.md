@@ -23,7 +23,7 @@
 - [x] Increment/Decrement
 - [x] Sum various values
 - [x] Use your own objects
-- [x] Add milestones
+- [x] Milestones (alarms)
 
 ### Supported OS & SDK Versions 📋
 
