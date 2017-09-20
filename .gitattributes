@@ -1,2 +1,3 @@
 *.sh linguist-language=Swift
+*.podspec linguist-language=Swift
 /Example/* linguist-vendored
