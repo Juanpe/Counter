@@ -22,9 +22,9 @@
 - [x] Easy to use
 - [x] Increment/Decrement
 - [x] You decide the start value
-- [x] Sum various values
+- [x] Sum several values in a single call
 - [x] Use your own objects
-- [x] Milestones (alarms)
+- [x] Set Milestones (alarms)
 
 ### Supported OS & SDK Versions 📋
 
@@ -43,7 +43,7 @@ pod "Counter"
 
 #### Manually 💪🏼
 
-  If you prefer, you can integrate Counter into your project manually. Simply add the `Counter.swift` source file directly into your project.
+If you prefer, you can integrate `Counter` into your project manually. Simply add the `Counter.swift` source file directly into your project.
 
 ## How to use 🐒
 
@@ -51,7 +51,7 @@ Import Counter in proper place.
 ```swift
 import Counter
 ```
-Now, you only need to create a Counter instance and start to play 🙂
+Now, you only need to create a `Counter` instance and start to play 🙂
 
 ```swift
 let counter = Counter() // 0
