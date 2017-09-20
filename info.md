@@ -21,11 +21,11 @@
 
 - [x] Easy to use
 - [x] Use your own objects
-- [x] Easily customisable
+- [x] Increment/Decrement
 
 ### Supported OS & SDK Versions
 
-* iOS 8.0+
+* iOS 9.0+
 * Swift 3
 
 ## Installation
@@ -59,7 +59,7 @@ Run `carthage` to build the framework and drag the built `counter.framework` int
 
   If you prefer, you can integrate Counter into your project manually. Simply add the `Counter.swift` source file directly into your project.
 
-## How to use xcodeproj 🐒
+## How to use 🐒
 
 Import Counter in proper place.
 ```swift
