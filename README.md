@@ -25,6 +25,7 @@
 - [x] Sum several values in a single call
 - [x] Use your own objects
 - [x] Set Milestones (alarms)
+- [x] Automatic counter
 
 ### Supported OS & SDK Versions 📋
 
@@ -142,6 +143,29 @@ protocol CounterDelegate{
 To add a new milestone:
 ```swift
 counter.add(milestone: 3)
+```
+
+#### AutomaticCounter
+
+Usage:
+```swift
+let automaticCounter = AutomaticCounter(startIn: 0, interval: 0.5, autoIncrement: 1)
+automaticCounter.delegate = self
+automaticCounter.automaticDelegate = self
+automaticCounter.startCounting(endingAt: 10)
+
+```
+
+End counting manually
+```swift
+let automaticCounter = AutomaticCounter(startIn: 0) // takes default parameters (interval: 1, autoIncrement: 1)
+automaticCounter.delegate = self
+automaticCounter.automaticDelegate = self
+automaticCounter.startCounting()
+
+DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+    automaticCounter.endCounting()
+}
 ```
 
 ## Contributed ❤️
