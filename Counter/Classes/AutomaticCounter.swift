@@ -7,13 +7,22 @@
 
 import Foundation
 
+public protocol AutomaticCounterDelegate: CounterDelegate {
+    func counter(_ counter: Counter, didFinishCounting value: Int)
+}
+
+extension AutomaticCounterDelegate {
+    func counter(_ counter: Counter, didFinishCounting value: Int) {}
+}
+
 public class AutomaticCounter: Counter {
+    
+    public var automaticDelegate: AutomaticCounterDelegate?
     
     var endValue: Int?
     var interval: TimeInterval
     var autoIncrement: Countable
-    
-    private var timer: Timer?
+    var timer: Timer?
     
     public init(startIn start: Int, interval: TimeInterval = 1.0, autoIncrement: Countable = 1) {
         self.interval = interval
@@ -22,26 +31,26 @@ public class AutomaticCounter: Counter {
     }
     
     public func startCounting(endingAt end: Int? = nil) {
+        if timer != nil {
+            endCounting()
+            reset()
+        }
         self.endValue = end
-        if #available(iOS 10.0, *) {
-            timer = Timer(timeInterval: interval, repeats: true, block: { [weak self] _ in self?.increment() })
-        }
-        else {
-            timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(increment), userInfo: nil, repeats: true)
-        }
+        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(increment), userInfo: nil, repeats: true)
         timer?.fire()
     }
     
     public func endCounting() {
         timer?.invalidate()
         timer = nil
+        automaticDelegate?.counter(self, didFinishCounting: value)
     }
     
     @objc private func increment() {
         if let endValue = endValue, value >= endValue {
             endCounting()
+            return
         }
         increment(autoIncrement)
     }
-    
 }
