@@ -4,7 +4,14 @@ Pod::Spec.new do |s|
   s.summary          = 'Powerful and multipurpose counter'
 
   s.description      = <<-DESC
-Powerful and multipurpose counter
+Powerful and multipurpose counter:
+- Easy to use
+- Increment/Decrement
+- You decide the start value
+- Sum several values in a single call
+- Use your own objects
+- Set Milestones (alarms)
+- Automatic counter
                        DESC
 
   s.homepage         = 'https://github.com/Juanpe/Counter'
@@ -14,7 +21,6 @@ Powerful and multipurpose counter
   s.social_media_url = 'https://twitter.com/juanpeCMiOS'
 
   s.ios.deployment_target = '9.0'
-
   s.source_files = 'Counter/Classes/**/*'
 
 
