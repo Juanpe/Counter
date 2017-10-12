@@ -19,7 +19,10 @@ extension Person: Countable{
     }
 }
 
-class ViewController: UIViewController, CounterDelegate {
+class ViewController: UIViewController, CounterDelegate, AutomaticCounterDelegate {
+    
+    var automaticCounter: AutomaticCounter!
+    var automaticCounter2: AutomaticCounter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +66,25 @@ class ViewController: UIViewController, CounterDelegate {
         
         let ages = Counter.sum(countables: dad, mum, son)
         print(ages) // 110
+        
+        print("\n\n\nAUTOMATIC COUNTER\n\n\n")
+        
+        automaticCounter = AutomaticCounter(startIn: 0, interval: 1, autoIncrement: 1)
+        automaticCounter.delegate = self
+        automaticCounter.automaticDelegate = self
+        automaticCounter.startCounting(endingAt: 10)
+    }
+    
+    func launchTimer2() {
+        print("\n\n")
+        automaticCounter2 = AutomaticCounter(startIn: 0, interval: 0.2)
+        automaticCounter2.delegate = self
+        automaticCounter2.automaticDelegate = self
+        automaticCounter2.startCounting()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.automaticCounter2.endCounting()
+        }
     }
     
     func counter(_ counter: Counter, hasReachedValue value: Int) {
@@ -75,6 +97,12 @@ class ViewController: UIViewController, CounterDelegate {
     
     func counter(_ counter: Counter, willReachValue value: Int) {
         print("\(#function) => \(value)")
+    }
+    
+    func counter(_ counter: Counter, didFinishCounting value: Int) {
+        print("\(#function) => \(value)")
+        guard automaticCounter2 == nil else { return }
+        launchTimer2()
     }
 }
 
