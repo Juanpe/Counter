@@ -21,7 +21,7 @@ public class AutomaticCounter: Counter {
         super.init(startIn: start)
     }
     
-    public func startCounting(endAt end: Int? = nil) {
+    public func startCounting(endingAt end: Int? = nil) {
         self.endValue = end
         if #available(iOS 10.0, *) {
             timer = Timer(timeInterval: interval, repeats: true, block: { [weak self] _ in self?.increment() })
