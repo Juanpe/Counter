@@ -147,15 +147,6 @@ counter.add(milestone: 3)
 
 #### AutomaticCounter
 
-Usage:
-```swift
-let automaticCounter = AutomaticCounter(startIn: 0, interval: 0.5, autoIncrement: 1)
-automaticCounter.delegate = self
-automaticCounter.automaticDelegate = self
-automaticCounter.startCounting(endingAt: 10)
-
-```
-
 End counting manually
 ```swift
 let automaticCounter = AutomaticCounter(startIn: 0) // takes default parameters (interval: 1, autoIncrement: 1)
@@ -163,9 +154,54 @@ automaticCounter.delegate = self
 automaticCounter.automaticDelegate = self
 automaticCounter.startCounting()
 
-DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
     automaticCounter.endCounting()
 }
+
+/* output
+counter(_:didChangeValue:) => 1
+counter(_:didChangeValue:) => 2
+counter(_:didChangeValue:) => 3
+counter(_:didFinishCounting:) => 3
+*/
+```
+
+End counting at value
+```swift
+let automaticCounter = AutomaticCounter(startIn: 0, interval: 0.5, autoIncrement: 1)
+automaticCounter.delegate = self
+automaticCounter.automaticDelegate = self
+automaticCounter.startCounting(endingAt: 10)
+
+/* output
+counter(_:didChangeValue:) => 1
+counter(_:didChangeValue:) => 2
+counter(_:didChangeValue:) => 3
+counter(_:didChangeValue:) => 4
+counter(_:didChangeValue:) => 5
+counter(_:didChangeValue:) => 6
+counter(_:didChangeValue:) => 7
+counter(_:didChangeValue:) => 8
+counter(_:didChangeValue:) => 9
+counter(_:didChangeValue:) => 10
+counter(_:didFinishCounting:) => 10
+*/
+
+```
+
+End counting after time interval
+```swift
+let automaticCounter = AutomaticCounter(startIn: 0, interval: 1)
+automaticCounter.delegate = self
+automaticCounter.automaticDelegate = self
+automaticCounter.startCounting(endingAfter: 3)
+
+/* output
+counter(_:didChangeValue:) => 1
+counter(_:didChangeValue:) => 2
+counter(_:didChangeValue:) => 3
+counter(_:didFinishCounting:) => 3
+*/
 ```
 
 ## Contributed ❤️
