@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		098264C61F8F6DB5009EFAD3 /* AutomaticCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098264C51F8F6DB5009EFAD3 /* AutomaticCounter.swift */; };
 		0E0CCE384F36CAF7A038FE42D5669CC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		3942DE9AD42E0F51918842F5C5D4388E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		3A03AB9E1F0789CE87346A44392B7F0D /* Counter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E50F08B2A18EEBAD551DBA3CC8908AD9 /* Counter-dummy.m */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		03A026CEFCEC11FD24EB8369F84BB179 /* Pods-Counter_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Counter_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		098264C51F8F6DB5009EFAD3 /* AutomaticCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AutomaticCounter.swift; path = Counter/Classes/AutomaticCounter.swift; sourceTree = "<group>"; };
 		12C3B79831BC2F16190A370F4F44CFC8 /* Counter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Counter-umbrella.h"; sourceTree = "<group>"; };
 		213FB85455BFB194122F135E155FA0D8 /* Pods-Counter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Counter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3268FBB94F1DAB75906A8644F409C057 /* Pods-Counter_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Counter_Example.modulemap"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				F5C3C7AC1F71AF0B00FD9EC8 /* Counter.swift */,
+				098264C51F8F6DB5009EFAD3 /* AutomaticCounter.swift */,
 				E06D5BF4CC95B7DD84F0CDA6648C919F /* Support Files */,
 			);
 			name = Counter;
@@ -323,6 +326,7 @@
 			files = (
 				3A03AB9E1F0789CE87346A44392B7F0D /* Counter-dummy.m in Sources */,
 				F5C3C7AD1F71AF0B00FD9EC8 /* Counter.swift in Sources */,
+				098264C61F8F6DB5009EFAD3 /* AutomaticCounter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

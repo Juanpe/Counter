@@ -39,7 +39,7 @@ public class Counter{
     fileprivate var initialValue: Int = 0
     fileprivate var milestones = Set<Int>()
     fileprivate var handledMilestones = Set<Int>()
-    fileprivate var value: Int = 0 {
+    internal var value: Int = 0 {
         willSet {
             notifyDelegateWill(oldValue: value, newValue: newValue)
         }
