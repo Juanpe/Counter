@@ -19,7 +19,11 @@ extension Person: Countable{
     }
 }
 
-class ViewController: UIViewController, CounterDelegate {
+class ViewController: UIViewController, CounterDelegate, AutomaticCounterDelegate {
+    
+    var automaticCounter: AutomaticCounter!
+    var automaticCounter2: AutomaticCounter!
+    var automaticCounter3: AutomaticCounter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +67,30 @@ class ViewController: UIViewController, CounterDelegate {
         
         let ages = Counter.sum(countables: dad, mum, son)
         print(ages) // 110
+        
+        print("\n\n\nAUTOMATIC COUNTER\n\n\n")
+        automaticCounter = AutomaticCounter(startIn: 0, interval: 0.5, autoIncrement: 1)
+        automaticCounter.delegate = self
+        automaticCounter.automaticDelegate = self
+        automaticCounter.startCounting(endingAt: 10)
+    }
+    
+    func launchTimer2() {
+        automaticCounter2 = AutomaticCounter(startIn: 0, interval: 0.2)
+        automaticCounter2.delegate = self
+        automaticCounter2.automaticDelegate = self
+        automaticCounter2.startCounting()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.automaticCounter2.endCounting()
+        }
+    }
+    
+    func launchTimer3() {
+        automaticCounter3 = AutomaticCounter(startIn: 0, interval: 1)
+        automaticCounter3.delegate = self
+        automaticCounter3.automaticDelegate = self
+        automaticCounter3.startCounting(endingAfter: 3)
     }
     
     func counter(_ counter: Counter, hasReachedValue value: Int) {
@@ -75,6 +103,16 @@ class ViewController: UIViewController, CounterDelegate {
     
     func counter(_ counter: Counter, willReachValue value: Int) {
         print("\(#function) => \(value)")
+    }
+    
+    func counter(_ counter: Counter, didFinishCounting value: Int) {
+        print("\(#function) => \(value)\n\n")
+        if automaticCounter === counter {
+            launchTimer2()
+        }
+        else if automaticCounter2 === counter {
+            launchTimer3()
+        }
     }
 }
 

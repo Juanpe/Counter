@@ -39,7 +39,7 @@ public class Counter{
     fileprivate var initialValue: Int = 0
     fileprivate var milestones = Set<Int>()
     fileprivate var handledMilestones = Set<Int>()
-    fileprivate var value: Int = 0 {
+    internal var value: Int = 0 {
         willSet {
             notifyDelegateWill(oldValue: value, newValue: newValue)
         }
@@ -99,27 +99,22 @@ public class Counter{
     }
     
     fileprivate func notifyDelegateWill(oldValue: Int, newValue: Int) {
-        if let delegate = delegate {
-            milestones.forEach{ milestone in
-                guard !self.handledMilestones.contains(milestone) else { return }
-                if newValue >= milestone {
-                    delegate.counter(self, willReachValue: milestone)
-                }
-            }
+        guard let delegate = delegate else { return }
+        milestones.forEach{ milestone in
+            guard !self.handledMilestones.contains(milestone), newValue >= milestone else { return }
+            delegate.counter(self, willReachValue: milestone)
         }
     }
     
     fileprivate func notifyDelegate() {
-        if let delegate = delegate {
-            delegate.counter(self, didChangeValue: value)
-            milestones.forEach{ milestone in
-                guard !self.handledMilestones.contains(milestone) else { return }
-                if value >= milestone {
-                    delegate.counter(self, hasReachedValue: milestone)
-                    self.handledMilestones.insert(milestone)
-                }
-            }
+        guard let delegate = delegate else { return }
+        delegate.counter(self, didChangeValue: value)
+        milestones.forEach{ milestone in
+            guard !self.handledMilestones.contains(milestone), value >= milestone else { return }
+            delegate.counter(self, hasReachedValue: milestone)
+            self.handledMilestones.insert(milestone)
         }
+        
     }
 }
 
