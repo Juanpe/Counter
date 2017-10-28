@@ -145,7 +145,7 @@ To add a new milestone:
 counter.add(milestone: 3)
 ```
 
-#### AutomaticCounter
+#### AutomaticCounter ⏱
 
 End counting manually
 ```swift
