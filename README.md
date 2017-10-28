@@ -147,6 +147,15 @@ counter.add(milestone: 3)
 
 #### AutomaticCounter ⏱
 
+Use the `AutomaticCounter` if you want to increment a `Countable` over time.
+
+With this protocol it will let you now when it's finished:
+```swift
+public protocol AutomaticCounterDelegate: CounterDelegate {
+    func counter(_ counter: AutomaticCounter, didFinishCounting value: Int)
+}
+```
+
 End counting manually
 ```swift
 let automaticCounter = AutomaticCounter(startIn: 0) // takes default parameters (interval: 1, autoIncrement: 1)
