@@ -22,7 +22,7 @@ extension Int: Countable {
 }
 
 /// A type that has a `deltaValue`.
-public protocol CounterDelegate{
+public protocol CounterDelegate: class {
     func counter(_ counter: Counter, willReachValue value: Int)
     func counter(_ counter: Counter, hasReachedValue value: Int)
     func counter(_ counter: Counter, didChangeValue value: Int)
@@ -48,7 +48,7 @@ public class Counter{
         }
     }
     
-    public var delegate: CounterDelegate?
+    public weak var delegate: CounterDelegate?
     
     public init(startIn start: Int = 0) {
         self.initialValue = start
