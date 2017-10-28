@@ -160,7 +160,6 @@ End counting manually
 ```swift
 let automaticCounter = AutomaticCounter(startIn: 0) // takes default parameters (interval: 1, autoIncrement: 1)
 automaticCounter.delegate = self
-automaticCounter.automaticDelegate = self
 automaticCounter.startCounting()
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -179,7 +178,6 @@ End counting at value
 ```swift
 let automaticCounter = AutomaticCounter(startIn: 0, interval: 0.5, autoIncrement: 1)
 automaticCounter.delegate = self
-automaticCounter.automaticDelegate = self
 automaticCounter.startCounting(endingAt: 10)
 
 /* output
@@ -202,7 +200,6 @@ End counting after time interval
 ```swift
 let automaticCounter = AutomaticCounter(startIn: 0, interval: 1)
 automaticCounter.delegate = self
-automaticCounter.automaticDelegate = self
 automaticCounter.startCounting(endingAfter: 3)
 
 /* output
