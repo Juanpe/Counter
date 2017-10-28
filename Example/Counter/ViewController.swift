@@ -71,14 +71,12 @@ class ViewController: UIViewController, CounterDelegate, AutomaticCounterDelegat
         print("\n\n\nAUTOMATIC COUNTER\n\n\n")
         automaticCounter = AutomaticCounter(startIn: 0, interval: 0.5, autoIncrement: 1)
         automaticCounter.delegate = self
-        automaticCounter.automaticDelegate = self
         automaticCounter.startCounting(endingAt: 10)
     }
     
     func launchTimer2() {
         automaticCounter2 = AutomaticCounter(startIn: 0, interval: 0.2)
         automaticCounter2.delegate = self
-        automaticCounter2.automaticDelegate = self
         automaticCounter2.startCounting()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -89,7 +87,6 @@ class ViewController: UIViewController, CounterDelegate, AutomaticCounterDelegat
     func launchTimer3() {
         automaticCounter3 = AutomaticCounter(startIn: 0, interval: 1)
         automaticCounter3.delegate = self
-        automaticCounter3.automaticDelegate = self
         automaticCounter3.startCounting(endingAfter: 3)
     }
     
@@ -105,7 +102,7 @@ class ViewController: UIViewController, CounterDelegate, AutomaticCounterDelegat
         print("\(#function) => \(value)")
     }
     
-    func counter(_ counter: Counter, didFinishCounting value: Int) {
+    func counter(_ counter: AutomaticCounter, didFinishCounting value: Int) {
         print("\(#function) => \(value)\n\n")
         if automaticCounter === counter {
             launchTimer2()
