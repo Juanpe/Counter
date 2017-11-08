@@ -223,7 +223,7 @@ See [all contributors](https://github.com/Juanpe/Counter/graphs/contributors)
 ```
 MIT License
 
-Copyright (c) 2017 swift-code
+Copyright (c) 2017 Juanpe Catalán
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
