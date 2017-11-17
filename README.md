@@ -7,8 +7,8 @@
 <a href="http://cocoapods.org/pods/Counter">
   <img src="https://img.shields.io/cocoapods/p/Counter.svg?style=flat" alt="Platform" />
 </a>
-<a href="https://twitter.com/juanpeCMiOS">
-        <img src="https://img.shields.io/badge/contact-@juanpeCMiOS-blue.svg?style=flat" alt="Twitter: @juanpeCMiOS" />
+<a href="https://twitter.com/juanpeCatalan">
+        <img src="https://img.shields.io/badge/contact-@juanpeCMiOS-blue.svg?style=flat" alt="Twitter: @JuanpeCatalan" />
     </a>
 <a href="https://opensource.org/licenses/MIT">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License" />
@@ -32,7 +32,19 @@
 * iOS 9.0+
 * Swift 3
 
-## Installation 📲
+## 🗂 Table of Contents
+
+  * [Installation](#-installation)
+    * [Cocoapods](#using-cocoapods)
+    * [Manual](#manually)
+  * [How to use](#-how-to-use)
+    * [Advanced](#-advanced)
+    * [Milestones](#-milestones)
+    * [AutomaticCounter](#-automaticcounter)
+
+
+
+## 📲 Installation
 
 #### Using [CocoaPods](https://cocoapods.org)
 
@@ -46,7 +58,7 @@ pod "Counter"
 
 If you prefer, you can integrate `Counter` into your project manually. Simply add the `Counter.swift` source file directly into your project.
 
-## How to use 🐒
+## 🐒 How to use
 
 Import Counter in proper place.
 ```swift
@@ -83,7 +95,7 @@ Other powerful feature is that you can sum various values at the same time
 counter.sum(countables: 2, 3, -1)  // 4
 ```
 
-#### Advanced 🤓
+#### 🤓 Advanced
 
 Can use your own objects to increment the counter. Only need implement `Countable` protocol:
 
@@ -125,7 +137,7 @@ let ages = Counter.sum(countables:dad, mum, son) // 110
 
 ```
 
-#### Milestones 🔔
+#### 🔔 Milestones
 
 ![](http://cdn.juanpecatalan.com/images/github/Counter/milestone.png)
 
@@ -145,7 +157,7 @@ To add a new milestone:
 counter.add(milestone: 3)
 ```
 
-#### AutomaticCounter ⏱
+#### ⏱ AutomaticCounter
 
 End counting manually
 ```swift
@@ -204,7 +216,7 @@ counter(_:didFinishCounting:) => 3
 */
 ```
 
-## Contributed ❤️
+## ❤️ Contributed
 This is an open source project, so feel free to contribute. How?
 - Open an [issue](https://github.com/Juanpe/Counter/issues/new).
 - Send feedback via [email](mailto://juanpecatalan.com).
@@ -212,13 +224,13 @@ This is an open source project, so feel free to contribute. How?
 
 See [all contributors](https://github.com/Juanpe/Counter/graphs/contributors)
 
-## Author 👨🏻‍💻
+## 👨🏻‍💻 Author
 [1.1]: http://i.imgur.com/tXSoThF.png
-[1]: http://www.twitter.com/juanpecmios
+[1]: http://www.twitter.com/juanpecatalan
 
 * Juanpe Catalán [![alt text][1.1]][1]
 
-## License 👮🏻
+## 👮🏻 License
 
 ```
 MIT License
