@@ -8,16 +8,18 @@
 import Foundation
 
 public protocol AutomaticCounterDelegate: CounterDelegate {
-    func counter(_ counter: Counter, didFinishCounting value: Int)
+    func counter(_ counter: AutomaticCounter, didFinishCounting value: Int)
 }
 
 extension AutomaticCounterDelegate {
-    func counter(_ counter: Counter, didFinishCounting value: Int) {}
+    func counter(_ counter: AutomaticCounter, didFinishCounting value: Int) {}
 }
 
-public class AutomaticCounter: Counter {
+public class AutomaticCounter {
     
-    public var automaticDelegate: AutomaticCounterDelegate?
+    public weak var delegate: AutomaticCounterDelegate? {
+        didSet { self.counter.delegate = self.delegate }
+    }
     
     var endValue: Int?
     var endTime: TimeInterval?
@@ -26,11 +28,13 @@ public class AutomaticCounter: Counter {
     var timer: Timer?
     var timeValue: TimeInterval
     
+    private let counter: Counter
+    
     public init(startIn start: Int, interval: TimeInterval = 1.0, autoIncrement: Countable = 1) {
         self.interval = interval
         self.autoIncrement = autoIncrement
         self.timeValue = 0
-        super.init(startIn: start)
+        self.counter = Counter(startIn: start)
     }
     
     public func startCounting(endingAt end: Int? = nil) {
@@ -50,15 +54,23 @@ public class AutomaticCounter: Counter {
     public func endCounting() {
         timer?.invalidate()
         timer = nil
-        automaticDelegate?.counter(self, didFinishCounting: value)
+        delegate?.counter(self, didFinishCounting: counter.value)
     }
-    public override func reset() {
-        super.reset()
+    public func reset() {
+        counter.reset()
         timeValue = 0
     }
     
+    public func add(milestone: Int) {
+        counter.add(milestone: milestone)
+    }
+    
+    public func remove(milestone: Int) {
+        counter.remove(milestone: milestone)
+    }
+    
     @objc private func increment() {
-        if let endValue = endValue, value >= endValue {
+        if let endValue = endValue, counter.value >= endValue {
             endCounting()
             return
         }
@@ -66,7 +78,7 @@ public class AutomaticCounter: Counter {
             endCounting()
             return
         }
-        increment(autoIncrement)
+        counter.increment(autoIncrement)
         timeValue += interval
     }
 }
